@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baithak · JAYASRI DIABETIC & CHILDREN'S CLINIC</title>
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background: #f6fbf9;  /* soft mint background */
+      color: #1e2f2d;
+      line-height: 1.5;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* header / navbar */
+    .header {
+      background: #ffffffdd;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow: 0 4px 20px rgba(0, 40, 30, 0.05);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 2px solid #b7d9cf;
+    }
+
+    .nav-container {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-area {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .clinic-name {
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #116455;
+      line-height: 1.2;
+    }
+
+    .clinic-name i {
+      color: #2f9e83;
+      margin-right: 8px;
+      font-size: 1.8rem;
+    }
+
+    .baithak-tag {
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: #4b6b64;
+      margin-left: 44px;
+      font-style: italic;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #1f4e43;
+      transition: 0.2s;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 4px;
+    }
+
+    .nav-links a:hover {
+      border-bottom-color: #2f9e83;
+      color: #0b3f35;
+    }
+
+    /* main content */
+    .main-content {
+      flex: 1;
+      max-width: 1300px;
+      width: 100%;
+      margin: 2rem auto;
+      padding: 0 2rem;
+    }
+
+    /* hero / business card */
+    .hero-card {
+      background: linear-gradient(145deg, #ffffff, #f4fbf8);
+      border-radius: 36px;
+      padding: 2.5rem 2.8rem;
+      box-shadow: 0 20px 35px -8px rgba(30, 50, 45, 0.15);
+      border: 1px solid #d3eee5;
+      margin-bottom: 2.5rem;
+    }
+
+    .company-heading {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .company-heading h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #0b4f41;
+    }
+
+    .badge-clinic {
+      background: #c6e9de;
+      color: #115e4b;
+      padding: 0.4rem 1.2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 1.2rem;
+      letter-spacing: 0.5px;
+      border: 1px solid #88cfbc;
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      margin: 2.5rem 0 1rem;
+    }
+
+    .detail-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1.15rem;
+      background: #e6f7f1;
+      padding: 1rem 1.2rem;
+      border-radius: 60px;
+      border: 1px solid #bae1d5;
+    }
+
+    .detail-item i {
+      font-size: 1.8rem;
+      color: #117a65;
+      width: 2rem;
+      text-align: center;
+    }
+
+    .address-block {
+      grid-column: 1 / -1;
+      background: #f1fbf7;
+      border-radius: 40px;
+      padding: 1.5rem 2rem;
+      border: 1px dashed #53b99f;
+      margin-top: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .address-block i {
+      margin-right: 15px;
+      color: #117a65;
+      font-size: 1.8rem;
+      vertical-align: middle;
+    }
+
+    /* page sections (privacy, terms, contact, copyright) */
+    .pages-section {
+      display: flex;
+      flex-direction: column;
+      gap: 2.2rem;
+    }
+
+    .page-card {
+      background: white;
+      border-radius: 30px;
+      padding: 2rem 2.5rem;
+      box-shadow: 0 12px 28px -8px rgba(30, 60, 50, 0.1);
+      border: 1px solid #cae2da;
+      transition: 0.15s;
+    }
+
+    .page-card h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #0d5f4d;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 3px solid #b1dfd0;
+      padding-bottom: 0.75rem;
+    }
+
+    .page-card h2 i {
+      color: #1f8a72;
+      font-size: 2rem;
+    }
+
+    .legal-text {
+      color: #183f37;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      max-width: 900px;
+    }
+
+    .legal-text p {
+      margin-bottom: 1.2rem;
+    }
+
+    .contact-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .contact-details {
+      flex: 1 1 260px;
+    }
+
+    .contact-details p {
+      margin: 1.2rem 0;
+      font-size: 1.2rem;
+    }
+
+    .contact-details i {
+      width: 2rem;
+      color: #1b7c65;
+    }
+
+    .map-placeholder {
+      background: #d9f0e8;
+      border-radius: 28px;
+      padding: 2rem;
+      flex: 1 1 280px;
+      text-align: center;
+      border: 2px solid #a7d5c5;
+      font-weight: 500;
+    }
+
+    .map-placeholder i {
+      font-size: 3rem;
+      color: #0b755d;
+      margin-bottom: 0.8rem;
+    }
+
+    /* copyright footer */
+    .copyright-footer {
+      margin-top: 2.5rem;
+      background: #1a3d36;
+      color: #e0f0ea;
+      border-radius: 40px 40px 20px 20px;
+      padding: 1.8rem 2.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.1rem;
+    }
+
+    .copyright-footer a {
+      color: #b6f0e0;
+      text-decoration: none;
+      border-bottom: 1px dotted;
+    }
+
+    .copyright-footer a:hover {
+      color: white;
+      border-bottom-color: white;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 2px solid #c7e0d7;
+      margin: 2rem 0 0.5rem;
+    }
+
+    /* responsive touches */
+    @media (max-width: 700px) {
+      .nav-container {
+        flex-direction: column;
+        align-items: start;
+        gap: 0.8rem;
+      }
+      .hero-card {
+        padding: 1.8rem;
+      }
+      .company-heading h1 {
+        font-size: 1.9rem;
+      }
+      .page-card {
+        padding: 1.5rem;
+      }
+      .footer-links {
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 0.5rem;
+      }
+      .copyright-footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- header with clinic name and baithak concept -->
+  <header class="header">
+    <div class="nav-container">
+      <div class="logo-area">
+        <span class="clinic-name"><i class="fas fa-stethoscope"></i> JAYASRI DIABETIC & CHILDREN'S CLINIC</span>
+        <span class="baithak-tag"><i class="fas fa-door-open"></i> Baithak · a place of care & comfort</span>
+      </div>
+      <div class="nav-links">
+        <a href="#privacy">Privacy</a>
+        <a href="#terms">Terms</a>
+        <a href="#contact">Contact</a>
+        <a href="#copyright">Copyright</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <!-- main business card (company details) -->
+    <div class="hero-card">
+      <div class="company-heading">
+        <h1>जयश्री डायबिटिक & चिल्ड्रन्स क्लिनिक</h1>
+        <span class="badge-clinic"><i class="fas fa-clinic-medical"></i> CLINIC</span>
+      </div>
+      <p style="font-size:1.2rem; color:#2b5f53; margin-bottom:1rem;"><i class="fas fa-hand-holding-heart" style="color:#1b7c65;"></i>  Baithak – your trusted neighbourhood health partner</p>
+      <div class="detail-grid">
+        <div class="detail-item"><i class="fas fa-phone-alt"></i> <span>8121783600</span></div>
+        <div class="detail-item"><i class="fas fa-envelope"></i> <span>rmr25795@gmail.com</span></div>
+        <div class="address-block">
+          <i class="fas fa-map-pin"></i> 
+          N PLOT NO.139, IN SURVEY NO.10, GROUND FLOOR, IN SHOP NO.1. SITUATED AT VIDYA NAGAR, ROAD NO.4, , Pothreddipally(V), Sangareddy(M), SANGAREDDY(Dist.), Telangana State, India
+        </div>
+      </div>
+    </div>
+
+    <!-- pages: privacy, terms, contact, copyright (all combined) -->
+    <div class="pages-section">
+      
+      <!-- PRIVACY POLICY -->
+      <section id="privacy" class="page-card">
+        <h2><i class="fas fa-shield-alt"></i> Privacy policy</h2>
+        <div class="legal-text">
+          <p><strong>Your privacy is at the core of Baithak & JAYASRI CLINIC.</strong> We collect only essential information (name, contact, health records) to provide you with the best medical care. Your data is never shared with third parties without explicit consent, except when required by law. We use secure electronic records and restrict access to authorised personnel only.</p>
+          <p>By visiting our clinic or using our services, you agree to the collection of necessary personal information for treatment, billing, and operational purposes. You may request a copy of your records or ask for corrections by contacting us directly.</p>
+          <p><i class="fas fa-check-circle" style="color:#258e73;"></i> We employ industry-standard safeguards. For any privacy concerns, please reach out via the contact page.</p>
+        </div>
+      </section>
+
+      <!-- TERMS AND CONDITIONS -->
+      <section id="terms" class="page-card">
+        <h2><i class="fas fa-file-contract"></i> Terms & conditions</h2>
+        <div class="legal-text">
+          <p><strong>1. Appointment & consultation:</strong> Consultations are by appointment. In case of emergency, please call +91 8121783600. Telemedicine services are subject to availability and discretion of the physician.</p>
+          <p><strong>2. Payment & insurance:</strong> Fees are payable at the time of service. We accept cash, UPI, and major cards. Insurance claims assistance can be provided, but final settlement is the patient's responsibility.</p>
+          <p><strong>3. Patient conduct:</strong> We maintain a respectful, child‑friendly environment. Please accompany minors at all times. Disruptive behaviour may lead to termination of the consultation without refund.</p>
+          <p><strong>4. Accuracy of information:</strong> You are responsible for providing accurate health history. The clinic will not be liable for incomplete or inaccurate patient-provided information.</p>
+          <p><strong>5. Updates:</strong> These terms may be updated periodically. Continued use of services implies acceptance of the latest version.</p>
+        </div>
+      </section>
+
+      <!-- CONTACT PAGE (detailed) -->
+      <section id="contact" class="page-card">
+        <h2><i class="fas fa-address-card"></i> Contact & location</h2>
+        <div class="contact-flex">
+          <div class="contact-details">
+            <p><i class="fas fa-user-md"></i> <strong>JAYASRI DIABETIC & CHILDREN'S CLINIC</strong></p>
+            <p><i class="fas fa-phone"></i>  <a href="tel:+918121783600" style="color:#116455; text-decoration:none;">+91 8121783600</a></p>
+            <p><i class="fas fa-envelope"></i>  <a href="mailto:rmr25795@gmail.com" style="color:#116455;">rmr25795@gmail.com</a></p>
+            <p><i class="fas fa-map-marker-alt"></i>  N PLOT NO.139, GROUND FLOOR, SHOP NO.1, VIDYA NAGAR, ROAD NO.4, Pothreddipally(V), Sangareddy(M), DIST. SANGAREDDY, TELANGANA</p>
+            <p><i class="fas fa-clock"></i>  Mon–Sat: 9:30 am – 1:30 pm & 5:30 pm – 8:30 pm<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sunday: emergency only (call first)</p>
+          </div>
+          <div class="map-placeholder">
+            <i class="fas fa-map-marked-alt"></i>
+            <h3 style="color:#0b5e4b;">📍 Baithak location</h3>
+            <p>VIDYA NAGAR, ROAD NO.4<br>Sangareddy · 502001<br><span style="background:#e0fcf2; padding:6px 12px; border-radius:40px; display:inline-block; margin-top:12px;"><i class="fas fa-location-dot"></i> exact pin on request</span></p>
+            <p style="margin-top:15px;"><i class="fas fa-wheelchair"></i> wheelchair accessible · child friendly</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- COPYRIGHT & LEGAL LINE (explicit page) -->
+      <section id="copyright" class="page-card" style="background:#ecf9f4;">
+        <h2><i class="fas fa-copyright"></i> Copyright & legal</h2>
+        <div class="legal-text" style="display:flex; flex-wrap:wrap; gap:1.5rem; align-items:center;">
+          <div style="flex:2;">
+            <p><strong>© 2025 JAYASRI DIABETIC & CHILDREN'S CLINIC (Baithak).</strong> All rights reserved. The content, logo, and clinical details are proprietary. No part of this website or the clinic’s name may be reproduced without written permission.</p>
+            <p>Clinic registration: governed by the Telangana State clinical establishments act. All trademarks acknowledged. For queries regarding copyright or reproduction, please write to rmr25795@gmail.com.</p>
+          </div>
+          <div style="background:#bde6db; border-radius: 50px; padding:1.2rem 1.8rem; font-size:1.5rem;">
+            <i class="fas fa-balance-scale"></i> ®️ Baithak
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- extensive copyright footer (with extra links) -->
+    <div class="copyright-footer" id="footer-copy">
+      <div>
+        <i class="far fa-copyright"></i> 2025 JAYASRI DIABETIC & CHILDREN'S CLINIC — Baithak. All rights reserved.
+      </div>
+      <div class="footer-links">
+        <a href="#privacy">Privacy</a>
+        <a href="#terms">Terms</a>
+        <a href="#contact">Contact</a>
+        <a href="#footer-copy">Copyright</a>
+      </div>
+    </div>
+
+    <!-- tiny horizontal line + extra acknowledgement (optional) -->
+    <hr>
+    <p style="text-align:center; color:#44665c; margin-top:0.5rem;"><i class="fas fa-heart" style="color:#279b7d;"></i>  Baithak — "a sitting together" with compassion  <i class="fas fa-heart" style="color:#279b7d;"></i></p>
+  </main>
+</body>
+</html>
